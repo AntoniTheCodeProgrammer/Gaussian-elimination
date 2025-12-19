@@ -1,0 +1,1 @@
+// tu pobieramy dane i tworzymy macierz

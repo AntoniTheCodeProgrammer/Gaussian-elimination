@@ -1,0 +1,1 @@
+// tu bedzie funkcja z gaussem
