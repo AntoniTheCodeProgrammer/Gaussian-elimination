@@ -10,7 +10,7 @@ main.o: main.c matrix.h gauss.h
 matrix.o: matrix.c matrix.h
 	$(CC) $(CFLAGS) -c matrix.c
 
-gauss.o: gauss.c gauss.h
+gauss.o: gauss.c gauss.h matrix.h
 	$(CC) $(CFLAGS) -c gauss.c
 
 clean:
