@@ -1,0 +1,14 @@
+gauss
+
+petla dla kolumn:
+    szukaj jedynki:
+        jesli nie ma zrob 
+        
+    zerowanie kolumny
+
+    zamienic rzedy?
+        tak -> zamien 
+
+    pustu rzad?
+        tak -> usun go
+    
