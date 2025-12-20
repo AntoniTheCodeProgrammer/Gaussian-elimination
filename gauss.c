@@ -1,12 +1,4 @@
 // tu bedzie funkcja z gaussem
-const n = 3;
-const m = 3;
-
-int matrix[m][n] = {
-    {4, 2, 1},
-    {2, 3, 1},
-    {0, 2, 8}
-};
 
 void make_one(int **matrix, int m, int n, int column){
     int row = -1;
@@ -28,6 +20,7 @@ void make_one(int **matrix, int m, int n, int column){
     int *temp_pointer = matrix[column];
     matrix[column] = matrix[row];
     matrix[row] = temp_pointer;
+    free(temp_pointer);
 }
 
 void gauss_elimination(int **matrix, int m, int n){
