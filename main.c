@@ -3,10 +3,18 @@
 
 
 int main(int argc, char **argv){
-    // tu wykonujemy funkcje
 
     int n = 3;
     int m = 3;
-    int **matrix = create_matrix(n, m);
-    // reszte plikow sie zrobi
+
+    printf("Podaj liczbę kolumn: ");
+    scanf("%d", &m);
+
+    printf("Podaj liczbę rzędów: ");
+    scanf("%d", &n);
+
+    int **matrix = create_matrix(m, n);
+
+    gauss_elimination(matrix, m, n);
+    
 }

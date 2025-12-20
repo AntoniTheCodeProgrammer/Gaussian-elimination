@@ -1,3 +1,5 @@
+#include "gauss.h"
+
 // tu bedzie funkcja z gaussem
 
 void make_one(int **matrix, int m, int n, int column){
