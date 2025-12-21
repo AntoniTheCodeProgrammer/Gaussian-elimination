@@ -13,7 +13,7 @@ int main(int argc, char **argv){
     printf("Podaj liczbę rzędów: ");
     scanf("%d", &n);
 
-    int **matrix = create_matrix(m, n);
+    double **matrix = create_matrix(m, n);
 
     gauss_elimination(matrix, m, n);
     
