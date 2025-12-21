@@ -8,6 +8,6 @@ to do
 
 [x] z int na float/double
 
-[ ] dodac zmienna row tak jak column 
+[x] dodac zmienna row tak jak column 
 
  
