@@ -2,18 +2,18 @@
 
 // tu pobieramy dane i tworzymy macierz
 
-int **create_matrix(int m, int n){
-    int **matrix = (int **)malloc(m * sizeof(int *));
+double **create_matrix(int m, int n){
+    double **matrix = (double **)malloc(m * sizeof(double *));
 
     for (int i = 0; i < m; i++) {
-        matrix[i] = (int *)malloc(n * sizeof(int));
+        matrix[i] = (double *)malloc(n * sizeof(double));
     }
 
     for(int y = 0; y < n; y++){
         for(int x = 0; x < m; x++){
-            int number = 0;
+            double number = 0;
             printf("Liczba %d w rzedzie %d: ", x+1, y+1);
-            scanf("%d", &number);
+            scanf("%lf", &number);
             matrix[y][x] = number;
         }
     }
@@ -23,11 +23,11 @@ int **create_matrix(int m, int n){
     return matrix;
 }
 
-void print_matrix(int **matrix, int m, int n){
+void print_matrix(double **matrix, int m, int n){
     for(int y = 0; y < n; y++){
         printf("| ");
         for(int x = 0; x < m; x++){
-            printf("%d ", matrix[y][x]);
+            printf("%.2f ", matrix[y][x]);
         }
         printf("|\n");
     }

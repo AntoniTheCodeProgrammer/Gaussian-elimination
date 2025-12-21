@@ -2,7 +2,7 @@
 #include "matrix.h"
 // tu bedzie funkcja z gaussem
 
-void make_one(int **matrix, int m, int n, int column){
+int make_one(int **matrix, int m, int n, int column){
     int row = -1;
     int smallest = 9999999;
     int real = smallest;
@@ -16,8 +16,13 @@ void make_one(int **matrix, int m, int n, int column){
         }
     }
 
+    if(row == -1){
+        return 1;
+    }
+
     // dziele zeby byla jedynka
     for(int i = 0; i < m; i++){
+        printf("%d / %d\n", matrix[row][i], real);
         matrix[row][i] /= real;
     }
 
@@ -25,6 +30,7 @@ void make_one(int **matrix, int m, int n, int column){
     int *temp_pointer = matrix[column];
     matrix[column] = matrix[row];
     matrix[row] = temp_pointer;
+    return 0;
 }
 
 void clear_column(int **matrix, int m, int n, int column){
@@ -43,13 +49,16 @@ void clear_column(int **matrix, int m, int n, int column){
 void gauss_elimination(int **matrix, int m, int n){
     for(int i = 0; i < m; i++){
         // wybieramy kolumne
-        make_one(matrix, m, n, i);
+        int ok = make_one(matrix, m, n, i);
 
         printf("\n");
         print_matrix(matrix, m, n);
 
         // czyscimy inne wiersze w tej kolumnie 
-        clear_column(matrix,m,n, i);
+        if (!ok){
+            clear_column(matrix,m,n, i);
+        }
+        
 
         printf("\n");
         print_matrix(matrix, m, n);
