@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int **create_matrix(int m, int n);
-void print_matrix(int **matrix, int m, int n);
+double **create_matrix(int m, int n);
+void print_matrix(double **matrix, int m, int n);
 
 #endif 

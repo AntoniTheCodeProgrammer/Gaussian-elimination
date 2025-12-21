@@ -3,7 +3,8 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 
-void gauss_elimination(int **matrix, int m, int n);
+void gauss_elimination(double **matrix, int m, int n);
 
 #endif 
