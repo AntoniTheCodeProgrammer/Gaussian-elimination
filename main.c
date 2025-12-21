@@ -16,5 +16,8 @@ int main(int argc, char **argv){
     double **matrix = create_matrix(m, n);
 
     gauss_elimination(matrix, m, n);
+
+    printf("\n");
+    print_matrix(matrix, m, n);
     
 }
