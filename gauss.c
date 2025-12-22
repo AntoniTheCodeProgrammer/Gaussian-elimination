@@ -4,15 +4,13 @@
 
 int chose_row(double **matrix, int m, int n, int column, int row){
     int actual_row = -1;
-    double smallest = 9999999;
-    double real = smallest;
+    double largest = 0;
 
     // szukam najlepszej jedynki
     for(int i = row; i < n; i++){
-        if(fabs(matrix[i][column]) < smallest && matrix[i][column] != 0){
-            smallest = fabs(matrix[i][column]);
+        if(fabs(matrix[i][column]) > largest){
+            largest = fabs(matrix[i][column]);
             actual_row = i;
-            real = matrix[i][column];
         }
     }
 
@@ -53,7 +51,8 @@ void clear_column(double **matrix, int m, int n, int column, int row){
 
 void gauss_elimination(double **matrix, int m, int n){
     int row = 0;
-    for(int i = 0; i < m; i++){
+    for(int i = 0; i < n-1; i++){
+        // printf("wykonuje petle po raz %d\n", i+1);
         // wybieramy kolumne
         int ok = chose_row(matrix, m, n, i, row);
 
@@ -68,6 +67,6 @@ void gauss_elimination(double **matrix, int m, int n){
 
         // printf("\n");
         // print_matrix(matrix, m, n);
-        // printf("nastepny wers\n");
+        
     }    
 }
