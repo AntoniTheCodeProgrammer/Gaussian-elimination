@@ -7,11 +7,10 @@ int main(int argc, char **argv){
     int n = 3;
     int m = 3;
 
-    printf("Podaj liczbę kolumn: ");
-    scanf("%d", &m);
-
-    printf("Podaj liczbę rzędów: ");
+    printf("Podaj wielkosc macierza: ");
     scanf("%d", &n);
+
+    m = n + 1;
 
     double **matrix = create_matrix(m, n);
 

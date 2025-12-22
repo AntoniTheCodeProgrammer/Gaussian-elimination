@@ -3,10 +3,10 @@
 // tu pobieramy dane i tworzymy macierz
 
 double **create_matrix(int m, int n){
-    double **matrix = (double **)malloc(m * sizeof(double *));
+    double **matrix = (double **)malloc(n * sizeof(double *));
 
-    for (int i = 0; i < m; i++) {
-        matrix[i] = (double *)malloc(n * sizeof(double));
+    for (int i = 0; i < n; i++) {
+        matrix[i] = (double *)malloc(m * sizeof(double));
     }
 
     for(int y = 0; y < n; y++){
@@ -26,9 +26,10 @@ double **create_matrix(int m, int n){
 void print_matrix(double **matrix, int m, int n){
     for(int y = 0; y < n; y++){
         printf("| ");
-        for(int x = 0; x < m; x++){
+        for(int x = 0; x < m-1; x++){
             printf("%.2f ", matrix[y][x]);
         }
+        printf("| %.2f ", matrix[y][m-1]);
         printf("|\n");
     }
 }
