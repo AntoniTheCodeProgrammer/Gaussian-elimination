@@ -2,7 +2,7 @@
 #include "matrix.h"
 // tu bedzie funkcja z gaussem
 
-int make_one(double **matrix, int m, int n, int column, int row){
+int chose_row(double **matrix, int m, int n, int column, int row){
     int actual_row = -1;
     double smallest = 9999999;
     double real = smallest;
@@ -21,12 +21,12 @@ int make_one(double **matrix, int m, int n, int column, int row){
     }
 
     // dziele zeby byla jedynka
-    for(int i = 0; i < m; i++){
-        if (matrix[actual_row][i] != 0){
-            // printf("%.2f / %.2f\n", matrix[actual_row][i], real);
-            matrix[actual_row][i] /= real;
-        } 
-    }
+    // for(int i = 0; i < m; i++){
+    //     if (matrix[actual_row][i] != 0){
+    //         // printf("%.2f / %.2f\n", matrix[actual_row][i], real);
+    //         matrix[actual_row][i] /= real;
+    //     } 
+    // }
 
     // podmieniam wersy
     if(actual_row != row){
@@ -55,7 +55,7 @@ void gauss_elimination(double **matrix, int m, int n){
     int row = 0;
     for(int i = 0; i < m; i++){
         // wybieramy kolumne
-        int ok = make_one(matrix, m, n, i, row);
+        int ok = chose_row(matrix, m, n, i, row);
 
         // printf("\n");
         // print_matrix(matrix, m, n);
