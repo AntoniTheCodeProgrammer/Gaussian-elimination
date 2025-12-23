@@ -1,5 +1,6 @@
 #include "gauss.h"
 #include "matrix.h"
+#include "podstawienie.h"
 
 
 int main(int argc, char **argv){
@@ -20,4 +21,9 @@ int main(int argc, char **argv){
     printf("\n");
     print_matrix(matrix, m, n);
     
+    double* wynik = podstawienie_wsteczne(matrix, m, n);
+
+    printf("\n");
+    print_podstawienie(wynik);
+	
 }
