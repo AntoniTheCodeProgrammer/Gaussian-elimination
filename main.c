@@ -4,9 +4,7 @@
 
 
 int main(int argc, char **argv){
-
-    int n = 3;
-    int m = 3;
+    int n,m;
 
     printf("Podaj liczbę kolumn: ");
     scanf("%d", &m);
@@ -24,6 +22,7 @@ int main(int argc, char **argv){
     double* wynik = podstawienie_wsteczne(matrix, m, n);
 
     printf("\n");
-    print_podstawienie(wynik);
-	
+    printf("Rozwiązanie macierzy za pomocą podstawienia wstecznego:\n");
+    print_podstawienie(wynik, n-1);
+
 }

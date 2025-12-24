@@ -34,10 +34,9 @@ double *podstawienie(double** matrix, int rows, int columns){
 	return results;	
 }
 
-void print_wynik(double* wynik){
+void print_wynik(double* wynik, int n){
 	if(wynik != NULL){
-		int len = sizeof(wynik)/sizeof(double)
-		for(int i = 0;i < len; i++){
+		for(int i = 0;i < n; i++){
 			printf("x%d = %g\n",i+1, wynik[i]);
 		}
 	}
