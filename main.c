@@ -19,10 +19,10 @@ int main(int argc, char **argv){
     printf("\n");
     print_matrix(matrix, m, n);
     
-    double* wynik = podstawienie_wsteczne(matrix, m, n);
+    double* argumenty = podstawienie(matrix, m, n);
 
     printf("\n");
     printf("Rozwiązanie macierzy za pomocą podstawienia wstecznego:\n");
-    print_podstawienie(wynik, n-1);
+    print_wynik(argumenty, n-1);
 
 }
