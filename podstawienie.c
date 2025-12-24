@@ -39,7 +39,6 @@ void print_wynik(double* wynik, int n){
 		for(int i = 0;i < n; i++){
 			printf("x%d = %g\n",i+1, wynik[i]);
 		}
-		free(results);
 	}
 		
 }
