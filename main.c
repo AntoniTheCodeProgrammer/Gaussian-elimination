@@ -24,6 +24,6 @@ int main(int argc, char **argv){
     printf("\n");
     printf("Rozwiązanie macierzy za pomocą podstawienia wstecznego:\n");
     print_wynik(argumenty, n-1);
-    free(results);
+    free(argumenty);
 
 }
