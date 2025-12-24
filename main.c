@@ -1,11 +1,13 @@
 #include "gauss.h"
 #include "matrix.h"
+#include "podstawienie.h"
 
 
-int main(int argc, char **argv){
+int main(){
+    int n,m;
 
-    int n = 3;
-    int m = 3;
+    printf("Podaj liczbę wierszy: ");
+    scanf("%d", &m);
 
     printf("Podaj wielkosc macierza: ");
     scanf("%d", &n);
@@ -19,4 +21,10 @@ int main(int argc, char **argv){
     printf("\n");
     print_matrix(matrix, m, n);
     
+    double* argumenty = podstawienie(matrix, m, n);
+
+    printf("\n");
+    print_wynik(argumenty, n-1);
+    free(argumenty);
+
 }

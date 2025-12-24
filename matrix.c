@@ -12,7 +12,7 @@ double **create_matrix(int m, int n){
     for(int y = 0; y < n; y++){
         for(int x = 0; x < m; x++){
             double number = 0;
-            printf("Liczba %d w rzedzie %d: ", x+1, y+1);
+            printf("Liczba %d w wierszu %d: ", x+1, y+1);
             scanf("%lf", &number);
             matrix[y][x] = number;
         }
