@@ -6,9 +6,6 @@
 int main(){
     int n,m;
 
-    printf("Podaj liczbę wierszy: ");
-    scanf("%d", &m);
-
     printf("Podaj wielkosc macierza: ");
     scanf("%d", &n);
 
