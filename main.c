@@ -3,13 +3,13 @@
 #include "podstawienie.h"
 
 
-int main(int argc, char **argv){
+int main(){
     int n,m;
 
-    printf("Podaj liczbę kolumn: ");
+    printf("Podaj liczbę wierszy: ");
     scanf("%d", &m);
 
-    printf("Podaj liczbę rzędów: ");
+    printf("Podaj liczbę kolumn: ");
     scanf("%d", &n);
 
     double **matrix = create_matrix(m, n);
@@ -22,7 +22,6 @@ int main(int argc, char **argv){
     double* argumenty = podstawienie(matrix, m, n);
 
     printf("\n");
-    printf("Rozwiązanie macierzy za pomocą podstawienia wstecznego:\n");
     print_wynik(argumenty, n-1);
     free(argumenty);
 

@@ -2,13 +2,31 @@
 #include "matrix.h"
 //funkcja podstawienia wstecznego rozwiązująca układ równań
 
-double eps = 1e-9;
+static const double eps = 1e-9;
 
 double *podstawienie(double** matrix, int rows, int columns){
+	// Oczekujemy macierzy n x (n+1): rows == columns-1
+    	if (matrix == NULL || rows <= 0 || columns <= 1) {
+        	fprintf(stderr, "Blad: niepoprawne argumenty funkcji podstawienie\n");
+        	return NULL;
+    	}
+    	if (rows != columns - 1) {
+        	fprintf(stderr, "Blad: oczekiwano macierzy n x (n+1), czyli rows == columns-1\n");
+        	return NULL;
+  	}
+	
 	double *results = (double *)malloc((columns-1) * sizeof(double));
+	
+	if (!results) {
+        	fprintf(stderr, "Blad: malloc nie przydzielil pamieci\n");
+        	return NULL;
+    	}
+	
 	for(int i = 0; i <columns-1; i++)
 		results[i] = 0.0;
+	
 	int ile_zer;
+	
 	for(int i = rows-1;i >= 0; i--){
 		ile_zer = 0;
 		for(int j = 0; j < columns-1; j++)
@@ -36,6 +54,7 @@ double *podstawienie(double** matrix, int rows, int columns){
 
 void print_wynik(double* wynik, int n){
 	if(wynik != NULL){
+		printf("Rozwiązanie macierzy za pomocą podstawienia wstecznego:\n");
 		for(int i = 0;i < n; i++){
 			printf("x%d = %g\n",i+1, wynik[i]);
 		}
