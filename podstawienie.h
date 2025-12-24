@@ -7,6 +7,6 @@
 
 double *podstawienie(double** matrix, int rows, int columns);
 
-void print_wynik(double* wynik);
+void print_wynik(double* wynik, int n);
 
 #endif
