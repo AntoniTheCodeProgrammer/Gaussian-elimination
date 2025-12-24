@@ -2,30 +2,44 @@
 #include "matrix.h"
 //funkcja podstawienia wstecznego rozwiązująca układ równań
 
+double eps = 1e-9;
+
 double *podstawienie(double** matrix, int rows, int columns){
 	double *results = (double *)malloc((columns-1) * sizeof(double));
+	for(int i = 0; i <columns-1; i++)
+		results[i] = 0.0;
 	int ile_zer;
-	int indx_row_start;
 	for(int i = rows-1;i >= 0; i--){
 		ile_zer = 0;
 		for(int j = 0; j < columns-1; j++)
-			if(matrix[i][j] == 0)
+			if (fabs(matrix[i][j]) < eps)
 				ile_zer++;
-		if(ile_zer == columns-1 && matrix[i][columns-1] != 0.0){
+		if(ile_zer == columns-1 && fabs(matrix[i][columns-1]) >= eps){
 			fprintf(stderr, "Blad: układ sprzeczny\n");
+			free(results);
 			return NULL;}
-		if(ile_zer != columns-1){
-			indx_row_start = i;
-			break;}
-		if(
+		else if(ile_zer == columns-1 && fabs(matrix[i][columns-1]) < eps){
+			fprintf(stderr, "Blad: układ nieoznaczony lub sprzeczny\n");
+			free(results);
+			return NULL;}
+		if(ile_zer != columns-1)
+			break;
 	}
-	int indx_col;
-	for(int i = 0; i< columns-1;i++){
-		if(matrix[indx_row_start][i] != 0.0)
-			indx_col = i;
+	for(int i = rows-1; i >= 0; i--){
+		double value = 0.0;
+		for(int j = i+1; j < columns-1; j++)
+			value -= matrix[i][j]*results[j];
+		results[i] = (value + matrix[i][columns-1])/matrix[i][i];
 	}
+	return results;	
+}
 
-	for(int i= indx_col + 1; i < columns-1; i++)
-		results[i] = 0.0;
-	
+void print_wynik(double* wynik){
+	if(wynik != NULL){
+		int len = sizeof(wynik)/sizeof(double)
+		for(int i = 0;i < len; i++){
+			printf("x%d = %g\n",i+1, wynik[i]);
+		}
+	}
+		
 }
