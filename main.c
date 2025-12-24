@@ -18,10 +18,10 @@ int main(){
     printf("\n");
     print_matrix(matrix, m, n);
     
-    double* argumenty = podstawienie(matrix, m, n);
+    double* argumenty = podstawienie(matrix, n, m);
 
     printf("\n");
-    print_wynik(argumenty, n-1);
+    print_wynik(argumenty, n);
     free(argumenty);
 
 }

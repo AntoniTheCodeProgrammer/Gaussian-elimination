@@ -67,6 +67,5 @@ void gauss_elimination(double **matrix, int m, int n){
 
         // printf("\n");
         // print_matrix(matrix, m, n);
-        
     }    
 }

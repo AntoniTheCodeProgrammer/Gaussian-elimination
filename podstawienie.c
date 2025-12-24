@@ -6,13 +6,13 @@ static const double eps = 1e-9;
 
 double *podstawienie(double** matrix, int rows, int columns){
 	// Oczekujemy macierzy n x (n+1): rows == columns-1
-    	if (matrix == NULL || rows <= 0 || columns <= 1) {
-        	fprintf(stderr, "Blad: niepoprawne argumenty funkcji podstawienie\n");
-        	return NULL;
-    	}
-    	if (rows != columns - 1) {
-        	fprintf(stderr, "Blad: oczekiwano macierzy n x (n+1), czyli rows == columns-1\n");
-        	return NULL;
+    if (matrix == NULL || rows <= 0 || columns <= 1) {
+        fprintf(stderr, "Blad: niepoprawne argumenty funkcji podstawienie\n");
+    	return NULL;
+	}
+    if (rows != columns - 1) {
+        fprintf(stderr, "Blad: oczekiwano macierzy n x (n+1), czyli rows == columns-1\n");
+    	return NULL;
   	}
 	
 	double *results = (double *)malloc((columns-1) * sizeof(double));
