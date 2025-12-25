@@ -6,11 +6,10 @@
 int main(){
     int n,m;
 
-    printf("Podaj wielkosc macierza: ");
+    printf("Podaj wielkosc macierzy: ");
     scanf("%d", &n);
 
     m = n + 1;
-
     double **matrix = create_matrix(m, n);
 
     gauss_elimination(matrix, m, n);

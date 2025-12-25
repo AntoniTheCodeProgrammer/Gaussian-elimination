@@ -17,7 +17,7 @@ double **create_matrix(int m, int n){
             matrix[y][x] = number;
         }
     }
-
+    printf("\n");
     print_matrix(matrix, m, n);
     
     return matrix;
